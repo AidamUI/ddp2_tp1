@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 
 public class tp1 {
@@ -172,9 +174,10 @@ public class tp1 {
     // ================================================= OTHER METHODS =================================================
     static void tanggalBesok() {
         LocalDate tomorrowDate = LocalDate.now().plusDays(1);
-        System.out.println("Tanggal: " + tomorrowDate.getDayOfWeek() + ", " + tomorrowDate.getDayOfMonth() + " " + tomorrowDate.getMonth() + " " + tomorrowDate.getYear());
+        System.out.println("Tanggal: " + tomorrowDate.getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("id", "ID")) + ", "
+                + tomorrowDate.getDayOfMonth() + " "
+                + tomorrowDate.getMonth().getDisplayName(TextStyle.FULL, new Locale("id", "ID")) + " "
+                + tomorrowDate.getYear());
         // print tomorrow date bro, Tanggal: Minggu 2 Februari 2025
     }
-
-
 }
